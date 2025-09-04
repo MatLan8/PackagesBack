@@ -1,6 +1,14 @@
-﻿namespace PackagesBack.api.Controllers;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
-public class BaseController
+namespace PackagesBack.api.Controllers;
+
+[ApiController]
+[Route("/api/[controller]")]
+public class BaseController : ControllerBase
 {
-    
+    private IMediator? _mediator;
+
+    protected IMediator Mediator
+        => (_mediator ??= HttpContext.RequestServices.GetService<IMediator>()) ?? throw new ArgumentNullException(nameof(_mediator));
 }

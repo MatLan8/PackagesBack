@@ -1,6 +1,10 @@
 ﻿namespace PackagesBack.Domain.Types;
 
-public class StatusesEnum
+public enum StatusesEnum
 {
-    
+    Created,
+    Sent,
+    Returned,
+    Accepted,
+    Canceled,
 }

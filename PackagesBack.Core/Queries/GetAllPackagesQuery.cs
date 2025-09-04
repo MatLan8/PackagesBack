@@ -1,6 +1,6 @@
-﻿namespace PackagesBack.Core.Queries;
+﻿using MediatR;
+using PackagesBack.Domain.Entities;
 
-public class GetAllPackagesQuery
-{
-    
-}
+namespace PackagesBack.Core.Queries;
+
+public class GetAllPackagesQuery : IRequest<List<Package>>;

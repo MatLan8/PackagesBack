@@ -10,6 +10,6 @@ public class PackageDto
     public string ReceiverAddress { get; set; }
     public string ReceiverName { get; set; }
     public string ReceiverPhone { get; set; }
-    
+    public DateTime CreationDate { get; set; }
     public List<StatusDto> StatusHistory { get; set; }
 }

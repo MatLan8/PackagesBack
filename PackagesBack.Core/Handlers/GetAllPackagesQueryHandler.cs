@@ -18,11 +18,12 @@ public class GetAllPackagesQueryHandler(PackagesBackDbContext dbContext) : IRequ
             .Select(p => new PackageDto
             {
                 Id = p.Id,
-                SenderAddress = p.SenderAddress,
+                CreationDate = p.CreatedAt,
                 SenderName = p.SenderName,
+                SenderAddress = p.SenderAddress,
                 SenderPhone = p.SenderPhone,
-                ReceiverAddress = p.ReceiverAddress,
                 ReceiverName = p.ReceiverName,
+                ReceiverAddress = p.ReceiverAddress,
                 ReceiverPhone = p.ReceiverPhone,
                 StatusHistory = p.StatusHistory
                     .Select(s => new StatusDto

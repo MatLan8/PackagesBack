@@ -6,7 +6,7 @@ namespace PackagesBack.Infrastructure;
 public class PackagesBackDbContext(DbContextOptions<PackagesBackDbContext> options) : DbContext(options)
 {
     public DbSet<Package> Packages { get; set; }
-
+    public DbSet<Status> Statuses { get; set; }
 }
 
 /*

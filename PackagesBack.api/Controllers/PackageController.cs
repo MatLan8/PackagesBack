@@ -28,4 +28,18 @@ public class PackageController : BaseController
         return Ok(result);
     }
     
+    [HttpGet("GetAvailableStatuses")]
+    public async Task<IActionResult> GetAvailableStatuses([FromQuery] GetPackageAvailableStatusesQuery query)
+    {
+        var result = await Mediator.Send(query);
+        return Ok(result);
+    }
+    
+    [HttpPatch("UpdateStatus")]
+    public async Task<IActionResult> Update(UpdatePackageStatusCommand command)
+    {
+        var result = await Mediator.Send(command);
+        return Ok(result);
+    }
+    
 }
